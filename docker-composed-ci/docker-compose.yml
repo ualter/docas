@@ -1,0 +1,27 @@
+wildfly:
+  build: ../wildfly  
+  ports:
+      - "8181:8080"
+      - "9990:9990"
+  volumes:
+      - ../wildfly/deployments:/opt/jboss/wildfly/standalone/deployments
+nexus:
+  build: ../nexus
+  ports:
+      - "8081:8081"
+#  volumes:
+#      - ../nexus/repo:/sonatype-work
+sonarqube:
+  build: ../sonarqube
+  ports:
+      - "9000:9000"
+      - "9092:9092"
+jenkins:
+  build: ../jenkins
+  ports:
+      - "8080:8080"
+  volumes:
+      - ../jenkins/home:/var/jenkins_home
+  links:
+       - sonarqube:sonarqube
+       - nexus:nexus

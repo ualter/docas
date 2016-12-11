@@ -1,0 +1,70 @@
+##### Docker
+
+##### Create an Container for Jenkins 
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 ualter/jenkins &
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /Users/ualter/Developer/dockers/jenkins/home:/var/jenkins_home ualter/jenkins &
+
+##### Create an Image of Wildfly with admin user already created
+docker build --tag=jboss/wildfly-admin .
+
+##### Create an Container for Wildfly
+docker run -it -p 9990:9990 -p 8181:8080 --name mywildfly -v /Users/ualter/Developer/dockers/wildfly/deployments:/opt/jboss/wildfly/standalone/deployments jboss/wildfly-admin 
+
+#### Create an Container for Artifactory
+docker run -d --name artifactory -p 80:80 -p 8081:8081 -p 443:443 jfrog-docker-reg2.bintray.io/jfrog/artifactory-oss
+## User/Password: admin/password
+
+
+
+# Check all The Container already create but not started
+docker ps -a
+
+# Start a container already created 
+docker start <PID>
+
+# Create an Image from a Dockerfile (sample Jenkins)
+docker build -t ujr_jenkins .
+
+# Bash container Jenkins
+docker exec -i jenkins_docker /bin/bash
+
+# Create an Image, change it and commit to a new Container (Changing an Container - Example: add some resources (json,etc.))
+docker run -t -i 0b2616b0e5a8 /bin/bash
+# Make the changings, example: apt-get update (update the packages installed)
+# Then, you should commit the changes of the Container to an new Image
+docker commit -m "Added json gem" -a "Kate Smith" 0b2616b0e5a8 ualter/jenkins:v2
+
+
+###### Docker Machine
+# List all virtual machines
+docker-machine ls
+
+# Gracefully stop a virtual machine
+docker-machine stop [default]
+
+# Start a virtual machine
+docker-machine start [default]
+
+
+###### Docker Compose
+ docker-compose ps
+ docker-compose up
+ docker-compose up -d   (background)
+ docker-compose stop
+ docker-compose run <web> env
+
+
+### Linux - Command Refs
+
+# Search packages
+apt-cache search <keyword>     Example: apt-cache search json
+
+
+# Commands Utils
+
+# Execute a command ls in a Container where the label(com.docker.compo.service=jenkins)
+docker exec $(docker ps -q --filter=label=com.docker.compose.service=jenkins) ls
+
+# Using pretty format
+docker ps --format {{.ID}}\t{{.Names}}
+
