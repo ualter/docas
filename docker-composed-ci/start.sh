@@ -6,11 +6,23 @@ echo "** Building the Dockers      "
 echo "*****************************"
 echo ""
 
+plataform="$(uname)"
+echo "*****************************"
+echo "** Plataform...: $plataform"
+echo "*****************************"
+echo "" 
+if [ $plataform == "Linux" ];
+then
+	# It seems that we are running in a Linux enrioment
+	ip=127.0.0.1
+else 
+	# Using Docker-Machine it is not a Linux native enviroment	
+	# Getting the docker-machine IP address
+	activeMachine=$(docker-machine active)
+	ip=$(docker-machine ip $activeMachine)
+	echo "You are at the...: \"$activeMachine\" machine"	
+fi
 
-# Getting the docker-machine IP address
-activeMachine=$(docker-machine active)
-ip=$(docker-machine ip $activeMachine)
-echo "You are at the...: \"$activeMachine\" machine"
 echo "Your IP is.......: \"$ip\""
 echo ""
 
