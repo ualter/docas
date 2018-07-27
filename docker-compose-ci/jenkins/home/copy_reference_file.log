@@ -1,0 +1,44 @@
+--- Copying files at Mon Dec 26 19:19:07 UTC 2016
+INSTALLED hudson.plugins.sonar.SonarGlobalConfiguration.xml
+INSTALLED jenkins.mvn.GlobalMavenConfig.xml
+INSTALLED maven-global-settings-files.xml
+INSTALLED hudson.tasks.Maven.xml
+INSTALLED config.xml
+INSTALLED plugins/ssh-credentials.jpi : 1.11
+INSTALLED plugins/dashboard-view.jpi : 2.9.7
+INSTALLED plugins/run-condition.jpi : 1.0
+INSTALLED plugins/scm-api.jpi : 1.0
+INSTALLED plugins/build-pipeline-plugin.jpi : 1.5.6
+INSTALLED plugins/git-client.jpi : 1.19.6
+INSTALLED plugins/analysis-core.jpi : 1.76
+INSTALLED plugins/groovy.jpi : 1.29
+INSTALLED plugins/config-file-provider.jpi : 2.10.1
+INSTALLED plugins/git.jpi : 2.4.4
+INSTALLED plugins/parameterized-trigger.jpi : 2.32
+INSTALLED plugins/script-security.jpi : 1.24
+INSTALLED plugins/docker-plugin.jpi : 0.16.0
+INSTALLED plugins/checkstyle.jpi : 3.45
+INSTALLED plugins/ssh-slaves.jpi : 1.11
+INSTALLED plugins/junit.jpi : 1.19
+INSTALLED plugins/durable-task.jpi : 1.3
+INSTALLED plugins/conditional-buildstep.jpi : 1.3.5
+INSTALLED plugins/token-macro.jpi : 2.0
+INSTALLED plugins/credentials.jpi : 1.25
+INSTALLED plugins/dry.jpi : 2.44
+INSTALLED plugins/maven-plugin.jpi : 2.14
+INSTALLED plugins/cobertura.jpi : 1.9.7
+INSTALLED plugins/matrix-auth.jpi : 1.3.2
+INSTALLED plugins/sonar.jpi : 2.4
+INSTALLED plugins/jquery.jpi : 1.11.2-0
+INSTALLED plugins/python.jpi : 1.3
+INSTALLED plugins/cloudbees-folder.jpi : 5.9
+INSTALLED plugins/javadoc.jpi : 1.3
+INSTALLED plugins/ansicolor.jpi : 0.4.2
+INSTALLED plugins/configurationslicing.jpi : 1.45
+INSTALLED plugins/icon-shim.jpi : 2.0.3
+INSTALLED plugins/structs.jpi : 1.5
+INSTALLED plugins/matrix-project.jpi : 1.7.1
+INSTALLED init.groovy.d/tcp-slave-agent-port.groovy
+--- Copying files at Sat Dec 31 15:38:09 UTC 2016
+--- Copying files at Sat May 20 17:36:53 UTC 2017
+--- Copying files at Mon Jun  5 14:47:32 UTC 2017
