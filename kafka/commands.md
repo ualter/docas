@@ -13,6 +13,16 @@ $ docker-compose -f docker-compose-v1.yml up -d kafka
 $ docker-compose -f docker-compose-v2.yml up -d kafka-1 kafka-2 kafka-3
 ```
 ## Communicating with Kafka
+
+## Kafkacat (Tests)
+https://github.com/edenhill/kafkacat
+
+Install Linux and MacOs
+```bash
+apt-get install kafkacat
+brew install kafkacat
+```
+
 ```bash
 # Check Status
 # v1
@@ -36,9 +46,10 @@ Metadata for all topics (from broker -1: localhost:9093/bootstrap):
 
 # Produce Messages to a Topic
 $ kafkacat -b localhost:9092 -P -t TopicA
-
+$ kafkacat -b localhost:9093,localhost:9094,localhost:9095 -P -t TopicA
 # Consume Message from a Topic
 $ kafkacat -b localhost:9092 -C -t TopicA
+$ kafkacat -b localhost:9093,localhost:9094,localhost:9095 -C -t TopicA
 # Consume Specific Partition
 kafkacat -b localhost:9092 -C -t TopicA -p 2
 # Consume Specific Partition from a specific Offset 
